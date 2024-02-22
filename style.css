@@ -1,0 +1,426 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Animação de rotação */
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Definindo variáveis de cor no root */
+:root {
+    --color-white: #fff;
+    --color-dark1: #272727;
+    --color-dark2: #2d2d2d;
+    --color-dark3: #414141;
+    --color-dark4: #1c1c1c;
+    --color-dark5: #343434;
+    --color-blue: #1F4E8C;
+}
+
+/* Zerando margens e preenchimentos padrão, e configurando caixa de borda */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do corpo da página */
+body {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(Imagens/back.png);
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+
+/* Estilo do cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-dark2);
+    box-shadow: 1px 1px 4px var(--color-dark4); 
+    height: 3.5em; 
+    padding: 0 10%;
+    margin-top: -1em; /* Sobrepondo um pouco a imagem */
+    position: sticky; /* Cabeçalho fixo */
+    top: 0;
+    z-index: 1; /* Certificando-se de que o cabeçalho está acima da imagem */
+}
+
+/* Estilo da imagem da galáxia */
+.galaxy-image {
+    width: 100%;
+    height: 10em;
+    object-fit: cover;
+    position: relative;
+    z-index: 0; /* Garantindo que a imagem esteja atrás do cabeçalho */
+}
+
+/* Estilo do logotipo */
+.logo_FA_ET {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilo do menu */
+.menu ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+/* Estilo do link no menu */
+.menu a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+}
+
+/* Efeito hover no link do menu */
+.menu a:hover {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: var(--color-blue);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 6px;
+    color: var(--color-white);
+}
+
+@media screen and (max-width: 768px) {
+    /* Estilo do cabeçalho para telas menores */
+    .menu, .galaxy-image{
+        display: none;
+    }
+    .box_1, .box_2, .cards{
+        flex-direction: column;
+    }
+
+    /* Estilo dos cards para telas menores */
+    .cards {
+        gap: 1px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .card {
+        width: 100%;
+    }    
+    .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        gap: 25px;
+        max-width: 100%;
+    }
+}
+
+
+
+
+/* Estilo do bloco de informações pessoais */
+.name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 1px;
+}
+
+/* Estilo do título principal */
+.name h1 {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    color: var(--color-white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do subtítulo */
+.name h4 {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1.5em;
+    color: var(--color-white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do texto adicional */
+.name p {
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 1em;
+    color: var(--color-white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo do bloco de conteúdo geral */
+.box_container {
+    display: flex;
+    margin-top: 20px;
+    gap: 25px;
+    background: rgba(45, 45, 45, 0.2);
+    border-radius: 4px;
+    padding: 16px;
+    margin-top: 2em;
+    color: var(--color-white);
+    text-align: justify;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Estilo do primeiro bloco */
+.box_1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Estilo da imagem "Sobre Mim" */
+.sobre_mim {
+    width: 800px auto;
+    height: auto;
+}
+
+/* Estilo do ícone do sistema solar com animação de rotação */
+.sistema_solar {
+    width: 150px;
+    height: 150px;
+    animation: rotation 20s infinite linear;
+}
+
+/* Estilo do segundo bloco */
+.box_2 {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Estilo da seção de astronomia */
+.astronomia {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Estilo das cartas (cards) */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+/* Estilo individual de cada carta */
+.card {
+    width: 370px;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    overflow: hidden;
+}
+
+/* Estilo da imagem da carta */
+.image-card {
+    width: 100%;
+    height: 15em;
+    object-fit: cover;  
+}
+
+/* Estilo do texto dentro da carta */
+p.text-card {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilo do contêiner das cartas */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 25px;
+}
+
+/* Estilo do conteúdo */
+.card-content {
+    padding: 16px;
+}
+
+/* Estilo do título dentro da carta */
+.card-content h3 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+/* Estilo do texto dentro da carta */
+.card-content p {
+    color: var(--color-dark4);
+    font-size: 15px;
+    line-height: 1.3;
+    text-align: justify;
+}
+
+/* Estilo do botão dentro da carta */
+.card-content .button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--color-blue);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: var(--color-white);
+}
+
+/* Efeito hover no botão dentro da carta */
+.card-content .button:hover {
+    background-color: var(--color-dark5);
+}
+
+/* Estilo do título*/
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    gap: 1px;
+    color: var(--color-white);
+}
+
+.title h1{
+    font-family: "Roboto Slab", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    color: var(--color-white);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Estilo do terceiro bloco */
+.box_3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    flex-wrap: wrap;
+    gap: 1px;
+    align-items: center;
+}
+
+.HarryPotter {
+    width: 550px;
+    margin: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slytherin {
+    width: 150px;
+    height: 150px;
+}
+
+.text-container {
+    flex: 1; 
+    margin-left: 20px; 
+}
+
+/* Estilo da seção Palmeiras */
+.Palmeiras {
+    width: 550px;
+    margin: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.palestra {
+    width: 150px;
+    height: 150px;
+}
+
+.text-container-palmeiras {
+    flex: 1; 
+    margin-left: 20px; 
+}
+
+
+
+/* Estilo do bloco de redes sociais */
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: stretch;
+    color: var(--color-white);
+}
+
+/* Estilo do ícone "ET" */
+.et {
+    width: 150px;
+    height: 100%;
+}
+
+/* Estilo do bloco de contato */
+.contato,
+.contato_button {
+    display: block;
+}
+
+/* Estilo do ícone de logo */
+.logo {
+    width: 20px;
+    height: 20px;
+}
+
+/* Estilo específico para o bloco de redes sociais no GitHub */
+.github {
+    justify-content: space-between;
+}
+
+/* Estilo do botão de contato */
+.contato_button {
+    text-decoration: none;
+    color: var(--color-white);
+}
