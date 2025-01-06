@@ -1,17 +1,18 @@
 /* Importando fontes do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+
 /* Animação de rotação */
 @keyframes rotation {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
 }
 
-/* Definindo variáveis de cor no root */
 :root {
     --color-white: #fff;
     --color-dark1: #272727;
@@ -19,24 +20,22 @@
     --color-dark3: #414141;
     --color-dark4: #1c1c1c;
     --color-dark5: #343434;
-    --color-blue: #1F4E8C;
+    --color-yellow: #f9b421;
+    --color-black: #000000;
 }
 
-/* Zerando margens e preenchimentos padrão, e configurando caixa de borda */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo do corpo da página */
 body {
     font-family: "Roboto Slab", sans-serif;
     font-weight: 400;
     font-style: normal;
-    background-image: url(Imagens/back.png);
-    background-size: cover;
-    background-repeat: repeat-y;
+
+    background: linear-gradient(to right, #0e0d0d 10%, #181818 70%, #0e0d0d 90%);
 }
 
 /* Estilo do cabeçalho */
@@ -45,13 +44,14 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-dark2);
-    box-shadow: 1px 1px 4px var(--color-dark4); 
-    height: 3.5em; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    height: 3.5em;
     padding: 0 10%;
-    margin-top: -1em; /* Sobrepondo um pouco a imagem */
-    position: sticky; /* Cabeçalho fixo */
+    margin-top: -1em;
+    position: sticky;
     top: 0;
-    z-index: 1; /* Certificando-se de que o cabeçalho está acima da imagem */
+    z-index: 1;
+    width: 100;
 }
 
 /* Estilo da imagem da galáxia */
@@ -60,13 +60,15 @@ body {
     height: 10em;
     object-fit: cover;
     position: relative;
-    z-index: 0; /* Garantindo que a imagem esteja atrás do cabeçalho */
+    z-index: 0;
 }
 
 /* Estilo do logotipo */
 .logo_FA_ET {
-    width: 120px;
-    height: auto;
+    width: auto;
+    height: 10vh;
+    margin: 0%;
+    float: left;
 }
 
 /* Estilo do menu */
@@ -78,7 +80,7 @@ body {
 
 /* Estilo do link no menu */
 .menu a {
-    color: var(--color-white);
+    color: var(--color-yellow);
     text-decoration: none;
     margin: 0 20px;
     font-weight: bold;
@@ -86,45 +88,19 @@ body {
 
 /* Efeito hover no link do menu */
 .menu a:hover {
-    display: inline-block;
-    padding: 4px 8px;
-    background-color: var(--color-blue);
-    text-decoration: none;
-    border-radius: 4px;
-    margin-top: 6px;
-    color: var(--color-white);
-}
-
-@media screen and (max-width: 768px) {
-    /* Estilo do cabeçalho para telas menores */
-    .menu, .galaxy-image{
-        display: none;
-    }
-    .box_1, .box_2, .cards{
-        flex-direction: column;
-    }
-
-    /* Estilo dos cards para telas menores */
-    .cards {
-        gap: 1px;
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    .card {
-        width: 100%;
-    }    
-    .card-container {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        margin-top: 50px;
-        gap: 25px;
-        max-width: 100%;
-    }
+    color: #fff;
 }
 
 
 
+.main {
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0; /* Remove espaçamento interno */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha ao centro */
+}
 
 /* Estilo do bloco de informações pessoais */
 .name {
@@ -132,29 +108,15 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 4vh;
     gap: 1px;
 }
 
 /* Estilo do título principal */
 .name h1 {
     font-family: "Roboto Slab", sans-serif;
-    font-weight: 600;
     font-style: normal;
-    font-size: 3em;
-    color: var(--color-white);
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Estilo do subtítulo */
-.name h4 {
-    font-family: "Roboto Slab", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    font-size: 1.5em;
+    font-size: 2.5em;
     color: var(--color-white);
     text-align: center;
     display: flex;
@@ -168,7 +130,7 @@ body {
     font-weight: 100;
     font-style: italic;
     font-size: 1em;
-    color: var(--color-white);
+    color: var(--color-yellow);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -186,8 +148,8 @@ body {
     margin-top: 2em;
     color: var(--color-white);
     text-align: justify;
-    margin-left: 0px;
-    margin-right: 0px;
+    max-width: 1200px; 
+    box-shadow: 4px 4px 10px #0e0d0d;
 }
 
 /* Estilo do primeiro bloco */
@@ -195,61 +157,92 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 60px;
-    margin-right: 60px;
-}
-
-/* Estilo da imagem "Sobre Mim" */
-.sobre_mim {
-    width: 800px auto;
-    height: auto;
 }
 
 /* Estilo do ícone do sistema solar com animação de rotação */
 .sistema_solar {
-    width: 150px;
-    height: 150px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
     animation: rotation 20s infinite linear;
 }
 
-/* Estilo do segundo bloco */
-.box_2 {
-    margin-left: 60px;
-    margin-right: 60px;
-}
 
 /* Estilo da seção de astronomia */
-.astronomia {
+.projetos {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-/* Estilo das cartas (cards) */
-.cards {
+.content-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
-    gap: 1px;
-    margin-left: 60px;
-    margin-right: 60px;
+    gap: 4vw;
+    /* Espaçamento entre as colunas */
+}
+
+.text-column {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.technologies-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.technologies-icons i {
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.technologies-icons i:hover {
+    transform: scale(1.2);
+    color: var(--color-yellow);
+}
+
+
+/* Estilo das cartas (cards) */
+.cards {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    display: flex;
+    margin-left: 0%;
+    gap: 2em;
+
 }
 
 /* Estilo individual de cada carta */
 .card {
-    width: 370px;
+    flex: 1;
+    height: 70vh;
+    max-height: 500px;
     background-color: var(--color-white);
-    border-radius: 8px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 10px;
+    box-shadow: 4px 4px 10px #0e0d0d;
+    /* border-radius: 16px;
     overflow: hidden;
+    border:4px solid #181818 */
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* Estilo da imagem da carta */
 .image-card {
     width: 100%;
     height: 15em;
-    object-fit: cover;  
+    object-fit: cover;
 }
 
 /* Estilo do texto dentro da carta */
@@ -263,20 +256,14 @@ p.text-card {
 }
 
 /* Estilo do contêiner das cartas */
-.card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: 50px;
-    gap: 25px;
-}
-
-/* Estilo do conteúdo */
 .card-content {
-    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 2em;
 }
 
-/* Estilo do título dentro da carta */
 .card-content h3 {
     font-size: 28px;
     margin-bottom: 8px;
@@ -292,22 +279,24 @@ p.text-card {
 
 /* Estilo do botão dentro da carta */
 .card-content .button {
+    margin-top: auto;
+    align-self: center;
     display: inline-block;
     padding: 8px 16px;
-    background-color: var(--color-blue);
+    background-color: var(--color-yellow);
     text-decoration: none;
     border-radius: 4px;
-    margin-top: 16px;
-    color: var(--color-white);
+    color: var(--color-dark4);
+    text-align: center;
 }
 
 /* Efeito hover no botão dentro da carta */
 .card-content .button:hover {
-    background-color: var(--color-dark5);
+    background-color: #e9a30c;
 }
 
 /* Estilo do título*/
-.title{
+.title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -318,7 +307,7 @@ p.text-card {
     color: var(--color-white);
 }
 
-.title h1{
+.title h1 {
     font-family: "Roboto Slab", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -330,26 +319,29 @@ p.text-card {
     align-items: center;
 }
 
-
-/* Estilo do terceiro bloco */
 .box_3 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 60px;
-    margin-right: 60px;
-    flex-wrap: wrap;
-    gap: 1px;
-    align-items: center;
+    justify-content: center; /* Centraliza os itens no eixo principal */
+    align-items: center; /* Centraliza os itens no eixo transversal */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 20px; 
 }
 
-.HarryPotter {
-    width: 550px;
-    margin: auto;
-    height: auto;
+.HarryPotter, .Palmeiras {
+    flex: 1;
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100px; 
+    padding: 15px; 
+    background: rgba(45, 45, 45, 0.2);
+    padding: 16px;
+    border-radius: 4px;
+    color: var(--color-white);
+    text-align: justify;
+    box-shadow: 4px 4px 10px #0e0d0d;
+    height: 35vh;
 }
 
 .slytherin {
@@ -358,18 +350,10 @@ p.text-card {
 }
 
 .text-container {
-    flex: 1; 
-    margin-left: 20px; 
+    flex: 1;
+    margin-left: 20px;
 }
 
-/* Estilo da seção Palmeiras */
-.Palmeiras {
-    width: 550px;
-    margin: auto;
-    height: auto;
-    display: flex;
-    align-items: center;
-}
 
 .palestra {
     width: 150px;
@@ -377,13 +361,10 @@ p.text-card {
 }
 
 .text-container-palmeiras {
-    flex: 1; 
-    margin-left: 20px; 
+    flex: 1;
+    margin-left: 20px;
 }
 
-
-
-/* Estilo do bloco de redes sociais */
 .redes-sociais {
     display: flex;
     justify-content: center;
@@ -410,6 +391,7 @@ p.text-card {
 
 /* Estilo do ícone de logo */
 .logo {
+    align-items:center ;
     width: 20px;
     height: 20px;
 }
@@ -423,4 +405,40 @@ p.text-card {
 .contato_button {
     text-decoration: none;
     color: var(--color-white);
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* Estilo do cabeçalho para telas menores */
+    .menu,
+    .galaxy-image {
+        display: none;
+    }
+
+    .box_1,
+    .box_2,
+    .cards {
+        flex-direction: column;
+    }
+
+    /* Estilo dos cards para telas menores */
+    .cards {
+        gap: 1px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        gap: 25px;
+        max-width: 100%;
+    }
 }
