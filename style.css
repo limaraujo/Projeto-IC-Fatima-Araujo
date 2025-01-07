@@ -34,7 +34,6 @@ body {
     font-family: "Roboto Slab", sans-serif;
     font-weight: 400;
     font-style: normal;
-
     background: linear-gradient(to right, #0e0d0d 10%, #181818 70%, #0e0d0d 90%);
 }
 
@@ -45,6 +44,7 @@ body {
     align-items: center;
     background-color: var(--color-dark2);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+
     height: 3.5em;
     padding: 0 10%;
     margin-top: -1em;
@@ -290,9 +290,8 @@ p.text-card {
     text-align: center;
 }
 
-/* Efeito hover no botão dentro da carta */
 .card-content .button:hover {
-    background-color: #e9a30c;
+    background-color: #c77b0a;
 }
 
 /* Estilo do título*/
@@ -408,7 +407,37 @@ p.text-card {
 }
 
 
-@media screen and (max-width: 768px) {
+#footer {
+    background-color: #121213; /* Fundo escuro para destacar o footer */
+    color: white; /* Texto branco para contraste */
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 0.9em; /* Ajusta o tamanho do texto */
+    border-top: 2px solid #f9b421; /* Linha superior para destacar o footer */
+    position: fixed; /* Fixa o footer no final da página */
+    bottom: 0; /* Alinha no rodapé */
+    width: 100%; /* Ocupa toda a largura da tela */
+  }
+  
+  #footer p {
+    margin: 0; /* Remove margens padrão */
+    font-family: Arial, sans-serif; /* Define a fonte */
+  }
+  
+  #footer p:hover {
+    color: #f0db4f; /* Altera a cor ao passar o mouse (exemplo com amarelo) */
+    cursor: pointer; /* Adiciona o cursor de ponteiro para interatividade */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .main {
+        max-width: 600px;
+        margin: 0 auto; /* Centraliza horizontalmente */
+        padding: 0; /* Remove espaçamento interno */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Alinha ao centro */
+    }
 
     /* Estilo do cabeçalho para telas menores */
     .menu,
@@ -416,29 +445,70 @@ p.text-card {
         display: none;
     }
 
+    .sistema_solar{
+        display: none;
+    }
+
+
     .box_1,
-    .box_2,
+    .box_2{
+        flex-direction: column;
+    }
+
     .cards {
+        display: flex;
+        flex-direction: column; /* Organiza os elementos em uma coluna */
+        margin: 5%; /* Adiciona margem ao redor do contêiner */
+        gap: 20px; /* Adiciona um espaço de 20px entre os itens */
+    }
+    
+
+    .box_3{
+        flex-direction: column;
+        width: 70vw;
+    }
+    .content-wrapper{
         flex-direction: column;
     }
 
     /* Estilo dos cards para telas menores */
     .cards {
         gap: 1px;
+        flex-direction: column; /* Organiza os elementos em uma coluna */
         margin-left: 0px;
         margin-right: 0px;
+        gap: 20px;
     }
 
     .card {
         width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .image-card{
+        width: 20vw;
     }
 
     .card-container {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
-        margin-top: 50px;
-        gap: 25px;
-        max-width: 100%;
+        justify-content: center; /* Alinha horizontalmente no centro */
+        align-items: center; /* Alinha verticalmente no centro */
+        gap: 20px;
+        height: 100vh; /* Ou qualquer altura necessária */
     }
+    
+    .card-content .button {
+        margin-top: auto;
+        align-self: center;
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: var(--color-yellow);
+        text-decoration: none;
+        border-radius: 4px;
+        color: var(--color-dark4);
+        text-align: center;
+    }
+
 }
